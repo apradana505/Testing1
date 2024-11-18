@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .answer {
+            margin: 10px 0;
+        }
+        .button-container {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ujian Online</h1>
+
+    <div class="question">
+        <p>1. Apa ibu kota Indonesia?</p>
+        <div class="answer">
+            <input type="radio" name="question1" id="option1" value="A">
+            <label for="option1">A. Jakarta</label>
+        </div>
+        <div class="answer">
+            <input type="radio" name="question1" id="option2" value="B">
+            <label for="option2">B. Surabaya</label>
+        </div>
+        <div class="answer">
+            <input type="radio" name="question1" id="option3" value="C">
+            <label for="option3">C. Bandung</label>
+        </div>
+        <div class="answer">
+            <input type="radio" name="question1" id="option4" value="D">
+            <label for="option4">D. Medan</label>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button onclick="submitAnswer()">Kirim Jawaban</button>
+    </div>
+
+    <script>
+        function submitAnswer() {
+            const options = document.getElementsByName("question1");
+            let selectedOption = "";
+
+            for (const option of options) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+
+            if (selectedOption) {
+                alert("Jawaban Anda: " + selectedOption);
+            } else {
+                alert("Silakan pilih jawaban sebelum mengirim.");
+            }
+        }
+    </script>
+
+</body>
+</html>

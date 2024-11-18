@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .answer {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .answer img {
+            max-width: 80px;
+            margin-right: 10px;
+        }
+        .button-container {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ujian Online</h1>
+
+    <!-- Soal dengan gambar -->
+    <div class="question">
+        <p>1. Apa nama hewan pada gambar berikut?</p>
+        <img src="images\kucing-lucu.jpg" alt="Gambar Hewan" style="display: block; margin: 10px auto;" width="100" height="100">
+    </div>
+
+    <!-- Jawaban berupa gambar dan teks -->
+    <div class="answer">
+        <input type="radio" name="question1" id="option1" value="A">
+        <label for="option1">
+            <!-- <img src="https://via.placeholder.com/80" alt="Jawaban A" style="display: block; margin: 10px auto;" width="100" height="100"> -->
+            A. Kucing
+        </label>
+    </div>
+    <div class="answer">
+        <input type="radio" name="question1" id="option2" value="B">
+        <label for="option2">
+            <!-- <img src="https://via.placeholder.com/80" alt="Jawaban B" style="display: block; margin: 10px auto;" width="100" height="100"> -->
+            B. Anjing
+        </label>
+    </div>
+    <div class="answer">
+        <input type="radio" name="question1" id="option3" value="C">
+        <label for="option3">
+            <!-- <img src="https://via.placeholder.com/80" alt="Jawaban C" style="display: block; margin: 10px auto;" width="100" height="100"> -->
+            C. Kelinci
+        </label>
+    </div>
+    <div class="answer">
+        <input type="radio" name="question1" id="option4" value="D">
+        <label for="option4">
+            <!-- <img src="https://via.placeholder.com/80" alt="Jawaban D" style="display: block; margin: 10px auto;" width="100" height="100"> -->
+            D. Hamster
+        </label>
+    </div>
+
+    <div class="button-container">
+        <button onclick="submitAnswer()">Kirim Jawaban</button>
+    </div>
+
+    <script>
+        function submitAnswer() {
+            const options = document.getElementsByName("question1");
+            let selectedOption = "";
+
+            for (const option of options) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+
+            if (selectedOption) {
+                alert("Jawaban Anda: " + selectedOption);
+            } else {
+                alert("Silakan pilih jawaban sebelum mengirim.");
+            }
+        }
+    </script>
+
+</body>
+</html>
